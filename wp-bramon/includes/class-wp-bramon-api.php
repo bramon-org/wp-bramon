@@ -56,14 +56,15 @@ class Wp_Bramon_Api {
      * Get the captures
      * @param array $filter
      * @param int $page
+     * @param int $limit
      * @return array|mixed
      */
-    public function get_captures(array $filter = [], int $page = 1) {
+    public function get_captures(array $filter = [], int $page = 1,  int $limit = 15) {
         try {
             $filters = http_build_query($filter);
 
             $curl = curl_init();
-            curl_setopt($curl, CURLOPT_URL, self::API_BASE . "operator/captures?page={$page}&{$filters}");
+            curl_setopt($curl, CURLOPT_URL, self::API_BASE . "operator/captures?page={$page}&limit={$limit}&{$filters}");
             curl_setopt($curl, CURLOPT_HEADER, 0);
             curl_setopt($curl, CURLOPT_USERAGENT,'WP_Bramon');
             curl_setopt($curl, CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $this->apiKey]);
