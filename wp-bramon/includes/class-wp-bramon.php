@@ -223,6 +223,7 @@ class Wp_Bramon {
      */
     public function show_stations() {
 	    $stations = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_stations();
+	    $stations = $stations['data'];
 
 	    $list = '
         <form method="get" action="' . get_permalink(get_the_ID())  . '">
@@ -260,33 +261,40 @@ class Wp_Bramon {
      * @throws Exception
      */
     public function show_captures() {
+        $filters = [];
+
+        if ($_GET['capture_date']) {
+            $filters['filter[captured_at]'] = $_GET['capture_date'];
+        }
+
 	    $list = '<ul class="captures_list">';
 
-	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures();
+	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures($filters, $_GET['page'] || 1);
 	    $captures_list = $captures['data'];
 
 	    foreach ($captures_list as $capture) {
             $imagem = array_filter($capture['files'], function($file) {
-                return preg_match('/T\.jpg$/i', $file['filename']);
+                return substr_count($file['filename'], 'T.jpg') !== 0;
             });
-
-            if (!array_key_exists(0, $imagem) || empty($imagem)) {
-                continue;
-            }
+            $imagem = array_pop($imagem);
 
             $list .= '
             <li>
-                <a href="' . str_replace('T.jpg', 'P.jpg', $imagem[0]['url']) . '" target="_blank">
-                    <img src="' . $imagem[0]['url'] . '" alt="' . $imagem[0]['filename'] . '">                
-                </a><br>
+                <a href="' . str_replace('T.jpg', 'P.jpg', $imagem['url']) . '" target="_blank">
+                    <img src="' . $imagem['url'] . '" alt="' . $imagem['filename'] . '">
+                </a>
+                <br>
                 ' . ($capture['class'] ?? 'Não analisado') . '<br>
                 ' . $capture['station']['name'] . ' <br> 
                 ' . (new DateTime($capture['captured_at']))->format('d/m/Y H:i:s') . '
-            </li>';
+            </li>
+            ';
         }
 
 	    $list .= '</ul>';
 
-        return $list;
+	    $pagination = '<ul class="captures_pagination"></ul>';
+
+        return $list . '<br>' . $pagination;
     }
 }
