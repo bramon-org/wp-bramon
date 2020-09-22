@@ -18,7 +18,7 @@
  *
  * @package    Wp_Bramon
  * @subpackage Wp_Bramon/public
- * @author     Your Name <email@bramonmeteor.org>
+ * @author     Thiago Paes <thiago@bramonmeteor.org>
  */
 class Wp_Bramon_Public {
 

@@ -22,7 +22,7 @@
  * @since      1.0.0
  * @package    Wp_Bramon
  * @subpackage Wp_Bramon/includes
- * @author     Your Name <email@bramonmeteor.org>
+ * @author     Thiago Paes <thiago@bramonmeteor.org>
  */
 class Wp_Bramon_i18n {
 
