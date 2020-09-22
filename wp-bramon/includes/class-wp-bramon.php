@@ -78,7 +78,6 @@ class Wp_Bramon {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -121,6 +120,11 @@ class Wp_Bramon {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-bramon-public.php';
+
+        /**
+         * The class responsible for contact the API
+         */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-wp-bramon-api.php';
 
 		$this->loader = new Wp_Bramon_Loader();
 
@@ -172,7 +176,6 @@ class Wp_Bramon {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
 	}
 
 	/**
@@ -215,4 +218,65 @@ class Wp_Bramon {
 		return $this->version;
 	}
 
+    public function show_stations() {
+	    $stations = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_stations();
+
+	    $list = '
+        <form method="get">
+            <ul class="station_list">';
+
+	    foreach ($stations as $station) {
+	        $list .= '
+            <li>
+                <label for="station_' . $station['id'] . '">
+                    <input type="checkbox" id="station_' . $station['id'] . '" name="filter[]" value="' . $station['id'] . '"> ' . $station['name'] . '
+                </label>
+            </li>';
+        }
+
+	    $list .= '
+            </ul>
+            
+            <br style="clear: both">
+            
+            <label for="capture_date" class="capture_date">
+                <input type="date" name="capture_date" id="capture_date">
+            </label>
+            
+            <br style="clear: both">
+            
+            <input type="submit" value="Buscar">
+        </form>
+        ';
+
+	    return $list;
+    }
+
+    public function show_captures() {
+	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures();
+
+	    $list = '<ul class="captures_list">';
+
+	    foreach ($captures['data'] as $capture) {
+            $imagem = array_filter($capture['files'], function($file) {
+                return preg_match('/T\.jpg$/i', $file['filename']);
+            });
+
+            if (!array_key_exists(0, $imagem) || empty($imagem)) {
+                continue;
+            }
+
+            $list .= '
+            <li>
+                <img src="' . $imagem[0]['url'] . '" alt="' . $imagem[0]['filename'] . '"><br>
+                ' . ($capture['class'] ?? 'Não analisado') . '<br>
+                ' . $capture['station']['name'] . ' <br> 
+                ' . (new DateTime($capture['captured_at']))->format('d/m/Y H:i:s') . '
+            </li>';
+        }
+
+	    $list .= '</ul>';
+
+	    return $list;
+    }
 }

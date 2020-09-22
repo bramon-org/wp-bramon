@@ -30,6 +30,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+// Put here your API Key
+if ( ! defined( 'BRAMON_API_KEY' ) ) {
+	define('BRAMON_API_KEY', '');
+}
+
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org

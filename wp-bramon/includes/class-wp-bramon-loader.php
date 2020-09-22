@@ -124,6 +124,8 @@ class Wp_Bramon_Loader {
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'], $hook['accepted_args'] );
 		}
 
+        add_shortcode( 'show_stations', ['Wp_Bramon', 'show_stations']);
+        add_shortcode( 'show_captures', ['Wp_Bramon', 'show_captures']);
 	}
 
 }
