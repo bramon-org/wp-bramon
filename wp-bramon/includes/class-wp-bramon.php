@@ -72,6 +72,7 @@ class Wp_Bramon {
 		} else {
 			$this->version = '1.0.0';
 		}
+
 		$this->Wp_Bramon = 'wp-bramon';
 
 		$this->load_dependencies();
@@ -226,14 +227,15 @@ class Wp_Bramon {
 	    $stations = $stations['data'];
 
 	    $list = '
-        <form method="get" action="' . get_permalink(get_the_ID())  . '">
+        <form method="get" action="' . get_page_link(get_the_ID())  . '">
             <ul class="station_list">';
 
 	    foreach ($stations as $station) {
 	        $list .= '
             <li>
                 <label for="station_' . $station['id'] . '">
-                    <input type="checkbox" id="station_' . $station['id'] . '" name="station[]" value="' . $station['id'] . '"> ' . $station['name'] . '
+                    <input type="checkbox" id="station_' . $station['id'] . '" name="station[]" value="' . $station['id'] . '" ' .  (in_array($station['id'], $_GET['station']) ? 'checked="checked"' : '') . '> 
+                    ' . $station['name'] . '
                 </label>
             </li>';
         }
@@ -244,11 +246,12 @@ class Wp_Bramon {
             <br style="clear: both">
             
             <label for="capture_date" class="capture_date">
-                <input type="date" name="capture_date" id="capture_date">
+                <input type="date" name="capture_date" id="capture_date" value="' . $_GET['capture_date'] . '">
             </label>
             
             <br style="clear: both">
             
+            <input type="hidden" name="page_id" value="' . get_the_ID() . '">
             <input type="submit" value="Buscar">
         </form>
         ';
@@ -261,6 +264,8 @@ class Wp_Bramon {
      * @throws Exception
      */
     public function show_captures() {
+        global $wp;
+
         $filters = [];
         $page = 1;
         $limit = 15;
@@ -275,6 +280,10 @@ class Wp_Bramon {
 
         if ($_GET['capture_limit']) {
             $limit = (int) $_GET['capture_limit'];
+        }
+
+        foreach ($_GET['station'] as $station) {
+            $filters['filter[station]'][] = $station;
         }
 
 	    $list = '<ul class="captures_list">';
@@ -303,7 +312,19 @@ class Wp_Bramon {
 
 	    $list .= '</ul>';
 
-	    $pagination = '<ul class="captures_pagination"></ul>';
+	    $current_url = add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
+	    $current_url = preg_replace('/.capture_page=\d+/i', '', $current_url);
+
+	    $pagination = '
+	    <br style="clear: both">
+	    
+	    <div style="text-align: center">
+            ' . ($captures['current_page'] > '1' ? '<a href="' . $current_url . '&capture_page=1">Primeira</a>' : '') . ' 
+            ' . ($captures['current_page'] > '1' ? '<a href="' . $current_url . '&capture_page=' . ($captures['current_page'] - 1) . '">Anterior</a>' : '') . ' 
+            ' . ($captures['current_page'] >= '1' ? '<a href="' . $current_url . '&capture_page=' . ($captures['current_page'] + 1) . '">Próxima</a>' : '') . ' 
+            ' . ($captures['current_page'] < $captures['last_page'] ? '<a href="' . $current_url . '&capture_page=' . ($captures['last_page']) . '">Última</a>' : '') . ' 
+        </div>
+	    ';
 
         return $list . '<br>' . $pagination;
     }
