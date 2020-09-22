@@ -262,14 +262,19 @@ class Wp_Bramon {
      */
     public function show_captures() {
         $filters = [];
+        $page = 1;
 
         if ($_GET['capture_date']) {
             $filters['filter[captured_at]'] = $_GET['capture_date'];
         }
 
+        if ($_GET['capture_page']) {
+            $page = (int) $_GET['capture_page'];
+        }
+
 	    $list = '<ul class="captures_list">';
 
-	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures($filters, $_GET['page'] || 1);
+	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures($filters, $page);
 	    $captures_list = $captures['data'];
 
 	    foreach ($captures_list as $capture) {
