@@ -218,18 +218,21 @@ class Wp_Bramon {
 		return $this->version;
 	}
 
+    /**
+     * @return string
+     */
     public function show_stations() {
 	    $stations = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_stations();
 
 	    $list = '
-        <form method="get">
+        <form method="get" action="' . get_permalink(get_the_ID())  . '">
             <ul class="station_list">';
 
 	    foreach ($stations as $station) {
 	        $list .= '
             <li>
                 <label for="station_' . $station['id'] . '">
-                    <input type="checkbox" id="station_' . $station['id'] . '" name="filter[]" value="' . $station['id'] . '"> ' . $station['name'] . '
+                    <input type="checkbox" id="station_' . $station['id'] . '" name="station[]" value="' . $station['id'] . '"> ' . $station['name'] . '
                 </label>
             </li>';
         }
@@ -252,12 +255,17 @@ class Wp_Bramon {
 	    return $list;
     }
 
+    /**
+     * @return string
+     * @throws Exception
+     */
     public function show_captures() {
-	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures();
-
 	    $list = '<ul class="captures_list">';
 
-	    foreach ($captures['data'] as $capture) {
+	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures();
+	    $captures_list = $captures['data'];
+
+	    foreach ($captures_list as $capture) {
             $imagem = array_filter($capture['files'], function($file) {
                 return preg_match('/T\.jpg$/i', $file['filename']);
             });
@@ -268,7 +276,9 @@ class Wp_Bramon {
 
             $list .= '
             <li>
-                <img src="' . $imagem[0]['url'] . '" alt="' . $imagem[0]['filename'] . '"><br>
+                <a href="' . str_replace('T.jpg', 'P.jpg', $imagem[0]['url']) . '" target="_blank">
+                    <img src="' . $imagem[0]['url'] . '" alt="' . $imagem[0]['filename'] . '">                
+                </a><br>
                 ' . ($capture['class'] ?? 'Não analisado') . '<br>
                 ' . $capture['station']['name'] . ' <br> 
                 ' . (new DateTime($capture['captured_at']))->format('d/m/Y H:i:s') . '
@@ -277,6 +287,6 @@ class Wp_Bramon {
 
 	    $list .= '</ul>';
 
-	    return $list;
+        return $list;
     }
 }
