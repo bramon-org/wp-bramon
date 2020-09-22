@@ -126,6 +126,7 @@ class Wp_Bramon_Loader {
 
         add_shortcode( 'show_stations', ['Wp_Bramon', 'show_stations']);
         add_shortcode( 'show_captures', ['Wp_Bramon', 'show_captures']);
+
 	}
 
 }
