@@ -15,9 +15,9 @@
  * @wordpress-plugin
  * Plugin Name:       WP Bramon
  * Plugin URI:        http://bramonmeteor.org/wp-bramon/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       BRAMON API Wordpress plugin.
  * Version:           1.0.0
- * Author:            Your Name or Your Company
+ * Author:            Thiago Paes
  * Author URI:        http://bramonmeteor.org/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
