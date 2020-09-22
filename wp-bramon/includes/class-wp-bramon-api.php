@@ -31,7 +31,7 @@ class Wp_Bramon_Api {
     public function get_stations() {
         try {
             $curl = curl_init();
-            curl_setopt($curl, CURLOPT_URL, self::API_BASE . "admin/stations?limit=1000");
+            curl_setopt($curl, CURLOPT_URL, self::API_BASE . "operator/stations?limit=1000");
             curl_setopt($curl, CURLOPT_USERAGENT,'WP_Bramon');
             curl_setopt($curl, CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $this->apiKey]);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -63,7 +63,7 @@ class Wp_Bramon_Api {
             $filters = http_build_query($filter);
 
             $curl = curl_init();
-            curl_setopt($curl, CURLOPT_URL, self::API_BASE . "admin/captures?page={$page}&{$filters}");
+            curl_setopt($curl, CURLOPT_URL, self::API_BASE . "operator/captures?page={$page}&{$filters}");
             curl_setopt($curl, CURLOPT_HEADER, 0);
             curl_setopt($curl, CURLOPT_USERAGENT,'WP_Bramon');
             curl_setopt($curl, CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $this->apiKey]);
