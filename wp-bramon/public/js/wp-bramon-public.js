@@ -28,5 +28,13 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
+	$.getScript('/wp-content/plugins/wp-bramon/public/js/lightbox.js');
 
+	$('<link>')
+		.appendTo('head')
+		.attr({
+			type: 'text/css',
+			rel: 'stylesheet',
+			href: '/wp-content/plugins/wp-bramon/public/css/lightbox.css'
+		});
 })( jQuery );

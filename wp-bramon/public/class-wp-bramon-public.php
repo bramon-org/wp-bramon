@@ -74,6 +74,7 @@ class Wp_Bramon_Public {
 		 */
 
 		wp_enqueue_style( $this->Wp_Bramon, plugin_dir_url( __FILE__ ) . 'css/wp-bramon-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->Wp_Bramon, plugin_dir_url( __FILE__ ) . 'css/lightbox.css', array(), $this->version, 'all' );
 
 	}
 
@@ -97,6 +98,7 @@ class Wp_Bramon_Public {
 		 */
 
 		wp_enqueue_script( $this->Wp_Bramon, plugin_dir_url( __FILE__ ) . 'js/wp-bramon-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->Wp_Bramon, plugin_dir_url( __FILE__ ) . 'js/lightbox.js', array( 'jquery' ), $this->version, false );
 
 	}
 

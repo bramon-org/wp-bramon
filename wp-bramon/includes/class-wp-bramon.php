@@ -335,7 +335,7 @@ class Wp_Bramon {
 
             $list .= '
             <li>
-                <a href="' . str_replace('T.jpg', 'P.jpg', $imagem['url']) . '" target="_blank">
+                <a href="' . str_replace('T.jpg', 'P.jpg', $imagem['url']) . '" data-lightbox="roadtrip">
                     <img src="' . $imagem['url'] . '" alt="' . $imagem['filename'] . '">
                 </a>
                 <br>

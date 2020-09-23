@@ -2,6 +2,7 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
 .station_list,
 .captures_list {
     list-style-type: none;
