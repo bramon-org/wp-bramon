@@ -23,17 +23,29 @@
 
     <form method="POST" action="options.php">
         <?php
-        settings_fields( 'bramon-api-group' );
+        settings_fields( 'bramon-api-key-group' );
 
         echo '
-        <label for="bramon_api_key">
+        <label for="bramon_api_key" style="display: block">
             <span>' . _e('Chave de API') . '</span>
             
             <input name="bramon_api_key" id="bramon_api_key" type="text" value="' . get_option( 'bramon_api_key' ) . '" size="40">
         </label>
         ';
 
+        settings_fields( 'bramon-api-pagination-limit-group' );
+
+
+        echo '
+        <label for="bramon_api_pagination_limit" style="display: block">
+            <span>' . _e('Limite da listagem') . '</span>
+            
+            <input name="bramon_api_pagination_limit" id="bramon_api_pagination_limit" type="text" value="' . get_option( 'bramon_api_pagination_limit' ) . '" size="2">
+        </label>
+        ';
+
         do_settings_sections( 'bramon_api_key' );
+        do_settings_sections( 'bramon_api_pagination_limit' );
         ?>
         <?php submit_button(); ?>
     </form>

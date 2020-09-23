@@ -108,9 +108,8 @@ class Wp_Bramon_Admin {
         $slug = 'wp-bramon-config';
         $callback = array( $this, 'plugin_settings_page_content' );
 
-//        add_option( 'bramon_api_key', 'Chave de API da Bramon');
-
-        register_setting( 'bramon-api-group', 'bramon_api_key', 'myplugin_callback' );
+        register_setting( 'bramon-api-key-group', 'bramon_api_key', ['default' => 'bramon-api-secret-key'] );
+        register_setting( 'bramon-api-pagination-limit-group', 'bramon_api_pagination_limit', ['default' => 15] );
 
         add_submenu_page( 'options-general.php', $page_title, $menu_title, $capability, $slug, $callback );
     }

@@ -298,7 +298,7 @@ class Wp_Bramon {
 
         $filters = [];
         $page = 1;
-        $limit = 15;
+        $limit = get_option( 'bramon_api_pagination_limit' );
 
         if ($_GET['capture_date']) {
             $filters['filter[captured_at]'] = $_GET['capture_date'];
