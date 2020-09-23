@@ -1,0 +1,482 @@
+J8_MMI:May Microscopiids
+J8_FLY:15 Lyncids
+J8_NNA:99 Aquariids
+J8_AAN:Alpha Antliids
+J8_ABO:Alpha Bootids
+J8_ACC:Alpha Cancrids
+J8_ACA:Alpha Canis Majorids
+J8_CAP:Alpha Capricornids
+J8_ACN:Alpha Carinids
+J8_ACE:Alpha Centaurids
+J8_ACI:Alpha Circinids
+J8_ACB:Alpha Coronae Borealids
+J8_ACR:Alpha Crucids
+J8_DOR:Alpha Doradids
+J8_ADR:Alpha Draconids
+J8_AHY:Alpha Hydrids
+J8_ALA:Alpha Lacertids
+J8_ALY:Alpha Lyncids
+J8_AMO:Alpha Monocerotids
+J8_APG:Alpha Pegasids
+J8_API:Alpha Pictorids
+J8_APX:Alpha Pyxidids
+J8_ASC:Alpha Scorpiids
+J8_ASX:Alpha Sextantids
+J8_ATR:Alpha Triangulids
+J8_AUM:Alpha Ursae Majorids
+J8_AVB:Alpha Virginids
+J8_AND:Andromedids
+J8_ACO:April  alpha Comae Berenicids
+J8_AHE:April 102 Herculids
+J8_AAL:April alpha Librids
+J8_ABS:April beta Sextantids
+J8_XLI:April chi Librids
+J8_AED:April epsilon Delphinids
+J8_ALO:April lambda Ophiuchids
+J8_LYR:April Lyrids
+J8_PUM:April psi Ursae Majorids
+J8_ARC:April rho Cygnids
+J8_AAH:August alpha Herculids
+J8_ABA:August beta Aquilids
+J8_ABC:August beta Capricornids
+J8_BPI:August Beta Piscids
+J8_ACD:August Caelids
+J8_ACT:August Cetids
+J8_ADC:August delta Capricornids
+J8_AUD:August Draconids
+J8_AGC:August gamma Cepheids
+J8_AIC:August iota Cetids
+J8_ALN:August Lyncids
+J8_AMD:August mu Draconids
+J8_ANA:August nu Aquariids
+J8_AOC:August omicron Cetids
+J8_AOE:August omicron Eridanids
+J8_AUP:August Piscids
+J8_ATA:August theta Aquilids
+J8_TRI:August Triangulids
+J8_AUS:August upsilon Sagittariids
+J8_AXC:August xi Cassiopeiids
+J8_AUR:Aurigids
+J8_PVE:B Puppids
+J8_BAQ:Beta Aquariids
+J8_BAR:Beta Arietids
+J8_BAU:Beta Aurigids
+J8_BCM:Beta Camelopardalids
+J8_BCD:Beta Cancrids
+J8_BCP:Beta Capricornids
+J8_BCA:Beta Cassiopeiids
+J8_CAU:Beta Coronae Australids
+J8_BCR:Beta Craterids
+J8_BEQ:Beta Equuleids
+J8_BRC:Beta Gruids
+J8_BHE:Beta Herculids
+J8_BHD:Beta Hydrids
+J8_BHY:Beta Hydrusids
+J8_BIN:Beta Indids
+J8_BMO:Beta Monocerotids
+J8_BPG:Beta Pegasids
+J8_BPE:Beta Perseids
+J8_BSX:Beta Sextantids
+J8_BTU:Beta Tucanids
+J8_BUM:Beta Ursae Majorids
+J8_BPA:Beta-Pavonids
+J8_BPH:Beta-Phoenicids
+J8_BCB:Bootid-Coronae Borealid Comple
+J8_CAN:C Andromedids
+J8_CVE:C Velids
+J8_CAM:Camelopardalids
+J8_CVN:Canum Venaticids
+J8_CAR:Carinid Complex
+J8_OCN:Centaurid I Complex
+J8_TCE:Centaurid II complex
+J8_CCA:Chi Capricornids
+J8_CLI:Chi Librids
+J8_CTA:Chi Taurids
+J8_CLE:Chi-Leonids
+J8_COL:Columbids
+J8_COR:Corvids
+J8_ACM:Dayt. alpha Canis Majorids
+J8_DAC:Dayt. April Cetids
+J8_APS:Dayt. April Piscids
+J8_ARI:Dayt. Arietids
+J8_DBA:Dayt. beta Andromedids
+J8_BCN:Dayt. beta Cancrids
+J8_BTA:Dayt. beta Taurids
+J8_DCQ:Dayt. c Aquariids
+J8_DXC:Dayt. chi Capricornids
+J8_DXL:Dayt. chi Leonids
+J8_DCP:Dayt. chi Piscids
+J8_DCR:Dayt. Craterids
+J8_DDl:Dayt. delta Leonids
+J8_DDC:Dayt. delta Scorpiids
+J8_DDT:Dayt. delta Triangulids
+J8_DEQ:Dayt. epsilon Aquariids
+J8_DEA:Dayt. epsilon Arietids
+J8_GLE:Dayt. gamma Leonids
+J8_GVI:Dayt. gamma Virginids
+J8_IVI:Dayt. iota Virginids
+J8_MKA:Dayt. kappa Aquariids
+J8_KLE:Dayt. kappa Leonids
+J8_KLI:Dayt. kappa Librids
+J8_LPE:Dayt. lambda Pegasids
+J8_DLT:Dayt. lambda Taurids
+J8_DMO:Dayt. Monocerotids
+J8_DMC:Dayt. mu Cancrids
+J8_DCE:Dayt. omega Cetids Complex
+J8_DPL:Dayt. pi Leonids
+J8_DFV:Dayt. psi Virginids
+J8_QPE:Dayt. q Pegasids
+J8_DSC:Dayt. Sagittariids-Capricornid
+J8_JSC:Dayt. Scutids
+J8_DSX:Dayt. Sexantids
+J8_TAS:Dayt. theta Aurigids
+J8_DTR:Dayt. Triangulids
+J8_XIC:Dayt. xi Cetids
+J8_XRI:Dayt. xi Orionids
+J8_XSA:Dayt. xi Sagittariids
+J8_ZCA:Dayt. zeta Cancrids
+J8_ZPE:Dayt. zeta Perseids
+J8_COM:Dec. Comae Berenicids
+J8_Mon:Dec. Monocerotids
+J8_DAR:December alpha Aurigids
+J8_DAB:December alpha Bootids
+J8_DAD:December Alpha Draconids
+J8_DCM:December Canis Majorids
+J8_CMI:December Canis Minorids
+J8_XVI:December Chi Virginids
+J8_DED:December epsilon Eridanids
+J8_DHY:December Hydrids
+J8_DKD:December Kappa Draconids
+J8_DCL:December Leonids
+J8_DLM:December Leonis Minorids
+J8_DEL:December Lyncids
+J8_DMH:December mu Hydrids
+J8_DMT:December mu Taurids
+J8_DPC:December phi Cassiopeiids
+J8_DRV:December rho Virginids
+J8_DSV:December sigma Virginids
+J8_DTA:December theta Aurigids
+J8_DAL:Delta Aquilids
+J8_DCA:Delta Cancrids Complex
+J8_DCH:Delta Chamaeleontids
+J8_DCY:Delta Cygnids
+J8_ADL:Delta Librids
+J8_DME:Delta Mensids
+J8_DPA:Delta Pavonids
+J8_DPI:Delta Piscids
+J8_DSE:Delta Serpentids
+J8_DVE:Delta Velids
+J8_DDR:Delta-Draconids
+J8_EAU:Epsilon Aquilids
+J8_ECA:Epsilon Carinids
+J8_ECO:Epsilon Columbids
+J8_EER:Epsilon Eridanids
+J8_EGE:Epsilon Geminids
+J8_EGR:Epsilon Grouids
+J8_EPG:Epsilon Pegasids
+J8_EPR:Epsilon Perseids
+J8_EUM:Epsilon Ursae Majorids
+J8_EPV:Epsilon Virginids
+J8_ETA:Eta Aquariids
+J8_ECR:Eta Carinids
+J8_ERI:Eta Eridanids
+J8_EHY:Eta Hydrids
+J8_ELY:Eta Lyrids
+J8_ETP:Eta Pegasids
+J8_ESE:Eta Serpentids
+J8_ETT:Eta Taurids
+J8_EVI:Eta Virginids
+J8_FHE:F Herculids
+J8_FOP:F Ophiuchids
+J8_FCM:February Canis Majorids
+J8_FCB:February Comae Berenicids
+J8_FEV:February epsilon Virginids
+J8_FED:February eta Draconids
+J8_FMV:February mu Virginids
+J8_FPL:February pi Leonids
+J8_FAO:Febuary alpha Orionids
+J8_GBO:Gamma Bootids
+J8_GCA:Gamma Camelopardalids
+J8_GCM:Gamma Canis Majorids
+J8_GCP:Gamma Cepheids
+J8_GDE:Gamma Delphinids
+J8_GDO:Gamma Doradids
+J8_GER:Gamma Eridanids
+J8_GLI:Gamma Librids
+J8_GNO:Gamma Normids
+J8_GPS:Gamma Piscids
+J8_PUP:Gamma Puppids
+J8_GTA:Gamma Taurids
+J8_GTI:Gamma Triangulids
+J8_GUM:Gamma Ursae Minorids
+J8_GVE:Gamma Velids
+J8_GCO:Gamma-Corvids
+J8_GEM:Geminids
+J8_HVI:H Virginids
+J8_IOA:Iota Arietids
+J8_ICA:Iota Cassiopeiids
+J8_ICE:Iota Cetids
+J8_ICY:Iota Cygnids
+J8_ISC:Iota Sculptorids
+J8_APY:January alpha Pixidids
+J8_JCO:January Comae Berenicids
+J8_JGD:January gamma Delphinids
+J8_JHY:January Hydrids
+J8_JLE:January Leonids
+J8_JNO:January nu Orionids
+J8_JPV:January phi Virginids
+J8_PIP:January pi Puppids
+J8_PVI:January pi Virginids
+J8_JZA:January zeta Aurigids
+J8_JZD:January zeta Draconids
+J8_JAD:July Andromedids
+J8_JBP:July beta Pegasids
+J8_JCE:July Centaurids
+J8_JCC:July chi Cassiopeiids
+J8_GDR:July Gamma Draconids
+J8_JGP:July gamma Pegasids
+J8_JGS:July gamma Sagittariids
+J8_MSR:July mu Serpendids
+J8_JPE:July Pegasids
+J8_PHE:July Phoenicids
+J8_JRH:July rho Herculids
+J8_JTR:July Taurids
+J8_ZED:July zeta Draconids
+J8_JBO:June Bootids
+J8_JEC:June epsilon Cygnids
+J8_JEO:June epsilon Ophiuchids
+J8_JIP:June iota Pegasids
+J8_JLY:June Lyrids
+J8_JMC:June mu Cassiopeiids
+J8_JRC:June rho Cygnids
+J8_JRP:June rho Cygnids
+J8_KAQ:Kappa Aquariids
+J8_KCT:Kappa Cetids
+J8_KCG:Kappa Cygnids
+J8_KDR:Kappa Draconids
+J8_KHY:Kappa Hydrids
+J8_KLY:Kappa Lyrids
+J8_KPA:Kappa Pavonids
+J8_KSE:Kappa Serpentids
+J8_KUM:Kappa Ursae Majorids
+J8_KVI:Kappa Virginids
+J8_KSC:Kappa-Scorpiids
+J8_LAQ:Lambda Aquariids
+J8_LBO:Lambda Bootids
+J8_LCE:Lambda Centaurids
+J8_LCY:Lambda Cygnids
+J8_LDR:Lambda Draconids
+J8_LLY:Lambda Lyrids
+J8_LOP:Lambda Ophiuchids
+J8_LUM:Lambda Ursae Majorids
+J8_LVL:Lambda Velids
+J8_LVI:Lambda Virginids
+J8_LEO:Leonids
+J8_LMI:Leonis Minorids
+J8_MCA:March Cassiopeiids
+J8_SGE:March delta Geminids
+J8_MLY:March Lyncids
+J8_MAC:May alpha Comae Berenicids
+J8_MBC:May beta  Capricornids
+J8_MDL:May delta Leonids
+J8_MAL:May Lacertids
+J8_MLV:May lambda Virginids
+J8_MML:May mu Leonids
+J8_MPV:May phi Virginids
+J8_MPS:May psi Scorpiids
+J8_MVL:May Vulpeculids
+J8_MZC:May zeta Cygnids
+J8_MIC:Microscopiids
+J8_MDR:Mu Draconids
+J8_MHY:Mu Hydrids
+J8_MLE:Mu Leonids
+J8_MUL:Mu Lyrids
+J8_PEG:Mu Pegasids
+J8_MPR:Mu Perseids
+J8_MSE:Mu Serpentids
+J8_MVE:Mu Velids
+J8_DLI:Mu Virginids
+J8_NAL:North. alpha Leonids
+J8_ORN:North. chi Orionids
+J8_NMA:North. Dayt. May Arietids
+J8_NOC:North. Dayt. omega Cetids
+J8_DNA:North. December delta Arietids
+J8_NDA:North. delta Aquariids
+J8_NCC:North. delta Cancrids
+J8_NDL:North. delta Leonids
+J8_NPI:North. delta Piscids
+J8_NGV:North. gamma Virginids
+J8_NIA:North. iota Aquariids
+J8_NLL:North. Librids-Lupids
+J8_NVI:North. March Virginids
+J8_NOP:North. May Ophiuchids
+J8_NSA:North. mu Sagittariids
+J8_NOA:North. October delta Arietids
+J8_NSC:North. omega Scorpiids
+J8_NSS:North. sigma Sagittariids
+J8_NTA:North. Taurids
+J8_NEC:Northern Eta-Cetids
+J8_NZC:Northern June Aquilids
+J8_NOO:Nov. Orionids
+J8_NAS:November alpha Sextantids
+J8_NDD:November delta Draconids
+J8_NER:November epsilon Eridanids
+J8_NGP:November gamma Pegasids
+J8_NHD:November Hydrids
+J8_NID:November i Draconids
+J8_IAR:November iota Aurigids
+J8_NLD:November lambda Draconids
+J8_NLM:November Leonis Minorids
+J8_NLY:November Lyncids
+J8_NAR:November nu Arietids
+J8_THA:November theta Aurigids
+J8_NZP:November zeta Perseids
+J8_NZT:November zeta Taurids
+J8_NAN:Nu Andromedids
+J8_NAU:Nu Aurigids
+J8_NBO:Nu Bootids
+J8_NCY:Nu Cygnids
+J8_NDR:Nu Draconids
+J8_NUE:Nu Eridanids
+J8_NGM:Nu Geminids
+J8_NHY:Nu Hydrids
+J8_NPH:Nu Phoenicids
+J8_NUM:Nu Ursae Majorids
+J8_OBC:October beta Camelopardalids
+J8_OCT:October Camelopardalids
+J8_OCC:October Capricornids
+J8_OCG:October Cygnids
+J8_DAU:October delta Aurigids
+J8_DRA:October Draconids
+J8_EPC:October epsilon Piscids
+J8_OEE:October eta Eridanids
+J8_OGC:October gamma Cetids
+J8_GPU:October gamma Puppids
+J8_ICS:October iota Cassiopeiids
+J8_OKD:October kappa Draconids
+J8_OLP:October Leporids
+J8_OLY:October Lyncids
+J8_OMO:October Monocerotids
+J8_OML:October mu Leonids
+J8_OCU:October Ursae Majorids
+J8_OUI:October Ursae Minorids
+J8_OMC:Omega Capricornids
+J8_OCS:Omega Cassiopeiids
+J8_OCA:Omega Centaurids
+J8_OME:Omega Eridanids
+J8_OPC:Omega Piscids
+J8_OPI:Omega Piscids
+J8_OSE:Omega Serpentids
+J8_FTA:Omega Taurids
+J8_OUM:Omega Ursae Majorids
+J8_OCY:Omicron Cygnids
+J8_ODR:Omicron Draconids
+J8_OER:Omicron Eridanids
+J8_OPG:Omicron Pegasids
+J8_OMA:Omicron Ursae Majorids
+J8_OLE:Omikron Leonids
+J8_ORI:Orionids
+J8_PER:Perseids
+J8_PAQ:Phi Aquariids
+J8_PBO:Phi Bootids
+J8_PDF:Phi Draconids
+J8_PHP:Phi Pegasids
+J8_PPS:Phi Piscids
+J8_FBO:Phi-Bootids
+J8_PHO:Phoenicids
+J8_CET:Pi Cetids
+J8_PIH:Pi Hydrids
+J8_OPL:Pi Leonids
+J8_PPU:Pi Puppids
+J8_PAU:Piscis Austrinids
+J8_PAR:Psi Aurigids
+J8_PSA:Psi Aurigids
+J8_PCA:Psi Cassiopeiids
+J8_PSP:Psi Pegasids
+J8_PSU:Psi Ursae Majorids
+J8_PUV:Puppid-Velid I Complex
+J8_VEL:Puppid-Velids II Complex
+J8_QUA:Quadrantids
+J8_RBO:Rho Bootids
+J8_RGE:Rho Geminids
+J8_RLE:Rho Leonids
+J8_RPU:Rho Puppids
+J8_SCU:Scutids
+J8_AOR:September alpha Orionids
+J8_SAQ:September Aquariids
+J8_SCS:September beta Cassiopeiids
+J8_GSA:September gamma Sagittariids
+J8_SIC:September iota Cassiopeiids
+J8_SLY:September Lyncids
+J8_SAR:September mu Arietids
+J8_SOO:September omicron Orionids
+J8_SPE:September Perseids
+J8_POR:September pi Orionids
+J8_SRP:September rho Pegasids
+J8_STC:September theta Capricornids
+J8_SOL:September-October Lyncids
+J8_SSA:Sigma Arietids
+J8_SCA:Sigma Capricornids
+J8_SCT:Sigma Cetids
+J8_Hyd:Sigma Hydrids
+J8_SLE:Sigma Leonids
+J8_SOR:Sigma Orionids
+J8_SPU:Sigma Puppids
+J8_SSE:Sigma Serpentids
+J8_SAP:South alpha Pegasids
+J8_SAL:South. alpha Leonids
+J8_ORS:South. chi Orionids
+J8_SMA:South. Dayt. May Arietids
+J8_OCE:South. Dayt. omega Cetids
+J8_DSA:South. December delta Arietids
+J8_SDA:South. Delta Aquariids
+J8_SCC:South. delta Cancrids
+J8_SDL:South. delta Leonids
+J8_SPI:South. delta Piscids
+J8_SGV:South. gamma Virginids
+J8_SIA:South. iota Aquariids
+J8_SLL:South. Librids-Lupids
+J8_SVI:South. March Virginids
+J8_SOP:South. May Ophiuchids
+J8_SSG:South. mu Sagittariids
+J8_SOA:South. October delta Arietids
+J8_SSC:South. omega Scorpiids
+J8_STA:South. Taurids
+J8_SLD:Southern lambda Draconids
+J8_SSS:Southern sigma Sagittariids
+J8_SZC:Southhern June Aquilids
+J8_TAQ:Tau Aquariids
+J8_TCA:Tau Cancrids
+J8_TAH:Tau Herculids
+J8_TOP:Tau Ophiuchids
+J8_TPU:Tau Puppids
+J8_TCN:Theta Centaurids
+J8_TCB:Theta Coronae Borealids
+J8_TPR:Theta Perseids
+J8_TPI:Theta Piscids
+J8_TPY:Theta Pyxidids
+J8_TSR:Theta Serpentids
+J8_TVI:Theta Virginids
+J8_UAN:Upsilon Andromedids
+J8_UCE:Upsilon Cetids
+J8_UER:Upsilon Eridanids
+J8_UUM:Upsilon Ursae Majorids
+J8_URS:Ursids
+J8_XHE:X Herculids
+J8_XAU:Xi Aurigids
+J8_XCE:Xi Cetids
+J8_XCB:Xi Coronae Borealids
+J8_XDR:Xi Draconids
+J8_CUR:Xi Ursae Majorids
+J8_XUM:Xi Ursae Majorids
+J8_ZAR:Zeta Arietids
+J8_ZCN:Zeta Cancrids
+J8_ZCS:Zeta Cassiopeiids
+J8_ZCY:Zeta Cygnids
+J8_ZDR:Zeta Draconids
+J8_ZER:Zeta Eridanids
+J8_ZOP:Zeta Ophiuchids
+J8_ZPU:Zeta Puppids
+J8_ZSE:Zeta Serpentids
+J8_ZTA:Zeta Taurids
+J8_DDP:Zeta-Perseids

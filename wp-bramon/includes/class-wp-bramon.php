@@ -220,14 +220,34 @@ class Wp_Bramon {
 	}
 
     /**
+     * @return array
+     */
+	public function get_radiants() {
+	    $radiants_list = file_get_contents( __DIR__  . '/../resources/radiants.txt');
+	    $radiants_collection = explode(PHP_EOL, $radiants_list);
+	    $radiants_final = [];
+
+	    foreach ($radiants_collection as $radiant) {
+            $tmp = explode(':', $radiant);
+
+            $radiants_final[ $tmp[0] ] = $tmp[1];
+        }
+
+	    return $radiants_final;
+    }
+
+    /**
      * @return string
      */
     public function show_stations() {
+        $radiants = (new self)->get_radiants();
 	    $stations = (new Wp_Bramon_Api(get_option( 'bramon_api_key' )))->get_stations();
 	    $stations = $stations['data'];
 
 	    $list = '
         <form method="get" action="' . get_page_link(get_the_ID())  . '">
+            <input type="hidden" name="page_id" value="' . get_the_ID() . '">
+            
             <ul class="station_list">';
 
 	    foreach ($stations as $station) {
@@ -240,6 +260,12 @@ class Wp_Bramon {
             </li>';
         }
 
+	    $radiants_options = '<option>Radiante</option>';
+
+	    foreach ($radiants as $radiant_id => $radiant_name) {
+	        $radiants_options .= '<option value="' . $radiant_id . '"' .  (array_key_exists('capture_radiant', $_GET) && $_GET['capture_radiant'] == $radiant_id ? 'selected="selected"' : '') . '>' . $radiant_id . ' - ' . $radiant_name . '</option>';
+        }
+
 	    $list .= '
             </ul>
             
@@ -249,9 +275,13 @@ class Wp_Bramon {
                 <input type="date" name="capture_date" id="capture_date" value="' . $_GET['capture_date'] . '">
             </label>
             
+            <label for="capture_radiant" class="capture_radiant">
+                Radiante: 
+                <select name="capture_radiant" id="capture_radiant">' . $radiants_options . '</select>
+            </label>
+            
             <br style="clear: both">
             
-            <input type="hidden" name="page_id" value="' . get_the_ID() . '">
             <input type="submit" value="Buscar">
         </form>
         ';
@@ -286,6 +316,10 @@ class Wp_Bramon {
             foreach ($_GET['station'] as $station) {
                 $filters['filter[station]'][] = $station;
             }
+        }
+
+        if ($_GET['capture_radiant']) {
+            $filters['filter[class]'] = $_GET['capture_radiant'];
         }
 
 	    $list = '<ul class="captures_list">';
