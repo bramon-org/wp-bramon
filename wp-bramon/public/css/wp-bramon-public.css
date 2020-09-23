@@ -8,24 +8,24 @@
     list-style-type: none;
     display: block;
     width: 100% !important;
+    margin: 0;
+    padding: 0;
 }
 
 .station_list li {
     display: inline-block;
-    float: left;
-    min-width: 5%;
+    padding: 2px;
 }
 
 .captures_list li {
     display: inline-block;
     float: left;
-    width: 220px;
     padding: 2px;
-    margin: 5px;
+    margin: 1px;
 }
 .captures_list li img {
-    padding: 2px;
-    margin: 5px;
+    padding: 3px;
+    margin: 2px;
     border: 1px solid darkgray;
 }
 
@@ -36,7 +36,17 @@
     padding: 0;
 }
 
-.capture_date {
+.captures_form .filter_bottom {
     display: inline-block;
-    width: 200px;
+    min-width: 200px;
+}
+
+.captures_form .filter_bottom span {
+    display: block;
+    min-width: 200px;
+}
+
+.captures_form .filter_bottom select {
+    display: inline-block;
+    width: 300px;
 }

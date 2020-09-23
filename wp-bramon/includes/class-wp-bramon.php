@@ -245,7 +245,7 @@ class Wp_Bramon {
 	    $stations = $stations['data'];
 
 	    $list = '
-        <form method="get" action="' . get_page_link(get_the_ID())  . '">
+        <form method="get" action="' . get_page_link(get_the_ID())  . '" class="captures_form">
             <input type="hidden" name="page_id" value="' . get_the_ID() . '">
             
             <ul class="station_list">';
@@ -271,16 +271,15 @@ class Wp_Bramon {
             
             <br style="clear: both">
             
-            <label for="capture_date" class="capture_date">
+            <label for="capture_date" class="filter_bottom">
+                <span>Data da captura:</span> 
                 <input type="date" name="capture_date" id="capture_date" value="' . $_GET['capture_date'] . '">
             </label>
             
-            <label for="capture_radiant" class="capture_radiant">
-                Radiante: 
+            <label for="capture_radiant" class="filter_bottom">
+                <span>Radiante:</span> 
                 <select name="capture_radiant" id="capture_radiant">' . $radiants_options . '</select>
             </label>
-            
-            <br style="clear: both">
             
             <input type="submit" value="Buscar">
         </form>
