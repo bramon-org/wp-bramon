@@ -349,16 +349,16 @@ class Wp_Bramon {
 	    $list .= '</ul>';
 
 	    $current_url = add_query_arg( $_SERVER['QUERY_STRING'], '', home_url( $wp->request ) );
-	    $current_url = preg_replace('/.capture_page=\d+/i', '', $current_url);
+	    $current_url = remove_query_arg( 'capture_page', $current_url);
 
 	    $pagination = '
 	    <br style="clear: both">
-	    
+
 	    <div style="text-align: center">
-            ' . ($captures['current_page'] > '1' ? '<a href="' . $current_url . '&capture_page=1">Primeira</a>' : '') . ' 
-            ' . ($captures['current_page'] > '1' ? '<a href="' . $current_url . '&capture_page=' . ($captures['current_page'] - 1) . '">Anterior</a>' : '') . ' 
-            ' . ($captures['current_page'] >= '1' ? '<a href="' . $current_url . '&capture_page=' . ($captures['current_page'] + 1) . '">Próxima</a>' : '') . ' 
-            ' . ($captures['current_page'] < $captures['last_page'] ? '<a href="' . $current_url . '&capture_page=' . ($captures['last_page']) . '">Última</a>' : '') . ' 
+            ' . ($captures['current_page'] > '1' ? '<a href="' . add_query_arg('capture_page', 1, $current_url) . '">Primeira</a>' : '') . ' 
+            ' . ($captures['current_page'] > '1' ? '<a href="' . add_query_arg('capture_page', ($captures['current_page'] - 1), $current_url) . '">Anterior</a>' : '') . ' 
+            ' . ($captures['current_page'] >= '1' ? '<a href="' . add_query_arg('capture_page', ($captures['current_page'] + 1), $current_url) . '">Próxima</a>' : '') . ' 
+            ' . ($captures['current_page'] < $captures['last_page'] ? '<a href="' . add_query_arg('capture_page', ($captures['last_page']), $current_url) . '">Última</a>' : '') . ' 
         </div>
 	    ';
 
