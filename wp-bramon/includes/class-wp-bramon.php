@@ -223,7 +223,7 @@ class Wp_Bramon {
      * @return string
      */
     public function show_stations() {
-	    $stations = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_stations();
+	    $stations = (new Wp_Bramon_Api(get_option( 'bramon_api_key' )))->get_stations();
 	    $stations = $stations['data'];
 
 	    $list = '
@@ -234,7 +234,7 @@ class Wp_Bramon {
 	        $list .= '
             <li>
                 <label for="station_' . $station['id'] . '">
-                    <input type="checkbox" id="station_' . $station['id'] . '" name="station[]" value="' . $station['id'] . '" ' .  (in_array($station['id'], $_GET['station']) ? 'checked="checked"' : '') . '> 
+                    <input type="checkbox" id="station_' . $station['id'] . '" name="station[]" value="' . $station['id'] . '" ' .  (array_key_exists('station', $_GET) && in_array($station['id'], $_GET['station']) ? 'checked="checked"' : '') . '> 
                     ' . $station['name'] . '
                 </label>
             </li>';
@@ -282,13 +282,15 @@ class Wp_Bramon {
             $limit = (int) $_GET['capture_limit'];
         }
 
-        foreach ($_GET['station'] as $station) {
-            $filters['filter[station]'][] = $station;
+        if ($_GET['station']) {
+            foreach ($_GET['station'] as $station) {
+                $filters['filter[station]'][] = $station;
+            }
         }
 
 	    $list = '<ul class="captures_list">';
 
-	    $captures = (new Wp_Bramon_Api(BRAMON_API_KEY))->get_captures($filters, $page, $limit);
+	    $captures = (new Wp_Bramon_Api(get_option( 'bramon_api_key' )))->get_captures($filters, $page, $limit);
 	    $captures_list = $captures['data'];
 
 	    foreach ($captures_list as $capture) {

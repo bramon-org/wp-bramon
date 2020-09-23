@@ -52,6 +52,7 @@ class Wp_Bramon_Admin {
 		$this->Wp_Bramon = $Wp_Bramon;
 		$this->version = $version;
 
+        add_action( 'admin_menu', array( $this, 'create_plugin_settings_page' ) );
 	}
 
 	/**
@@ -100,4 +101,21 @@ class Wp_Bramon_Admin {
 
 	}
 
+    public function create_plugin_settings_page() {
+        $page_title = $this->Wp_Bramon;
+        $menu_title = 'WP BRAMON';
+        $capability = 'manage_options';
+        $slug = 'wp-bramon-config';
+        $callback = array( $this, 'plugin_settings_page_content' );
+
+//        add_option( 'bramon_api_key', 'Chave de API da Bramon');
+
+        register_setting( 'bramon-api-group', 'bramon_api_key', 'myplugin_callback' );
+
+        add_submenu_page( 'options-general.php', $page_title, $menu_title, $capability, $slug, $callback );
+    }
+
+    public function plugin_settings_page_content() {
+        return include_once __DIR__ . '/partials/wp-bramon-admin-display.php';
+    }
 }
