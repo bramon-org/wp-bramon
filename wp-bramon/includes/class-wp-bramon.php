@@ -260,7 +260,7 @@ class Wp_Bramon {
             </li>';
         }
 
-	    $radiants_options = '<option>Radiante</option>';
+	    $radiants_options = '<option value=""></option>';
 
 	    foreach ($radiants as $radiant_id => $radiant_name) {
 	        $radiants_options .= '<option value="' . $radiant_id . '"' .  (array_key_exists('capture_radiant', $_GET) && $_GET['capture_radiant'] == $radiant_id ? 'selected="selected"' : '') . '>' . $radiant_id . ' - ' . $radiant_name . '</option>';
@@ -299,25 +299,25 @@ class Wp_Bramon {
         $page = 1;
         $limit = get_option( 'bramon_api_pagination_limit' );
 
-        if ($_GET['capture_date']) {
+        if (!empty($_GET['capture_date'])) {
             $filters['filter[captured_at]'] = $_GET['capture_date'];
         }
 
-        if ($_GET['capture_page']) {
+        if (!empty($_GET['capture_page'])) {
             $page = (int) $_GET['capture_page'];
         }
 
-        if ($_GET['capture_limit']) {
+        if (!empty($_GET['capture_limit'])) {
             $limit = (int) $_GET['capture_limit'];
         }
 
-        if ($_GET['station']) {
+        if (!empty($_GET['station'])) {
             foreach ($_GET['station'] as $station) {
                 $filters['filter[station]'][] = $station;
             }
         }
 
-        if ($_GET['capture_radiant']) {
+        if (!empty($_GET['capture_radiant'])) {
             $filters['filter[class]'] = $_GET['capture_radiant'];
         }
 

@@ -61,7 +61,7 @@ class Wp_Bramon_Api {
      */
     public function get_captures(array $filter = [], int $page = 1,  int $limit = 15) {
         try {
-            $filters = http_build_query($filter);
+            $filters = urldecode(http_build_query($filter));
 
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL, self::API_BASE . "operator/captures?page={$page}&limit={$limit}&{$filters}");
