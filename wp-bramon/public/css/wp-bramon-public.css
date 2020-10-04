@@ -10,23 +10,24 @@
     width: 100% !important;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .station_list li {
+    list-style: none;
     display: inline-block;
     padding: 2px;
+    text-align: left;
 }
 
 .captures_list li {
+    list-style: none;
     display: inline-block;
-    float: left;
-    padding: 2px;
-    margin: 1px;
+    text-align: left;
 }
 .captures_list li img {
-    padding: 3px;
-    margin: 2px;
-    border: 1px solid darkgray;
+    /*margin: 2px;*/
+    /*border: 1px solid darkgray;*/
 }
 
 .wp-block-separator {

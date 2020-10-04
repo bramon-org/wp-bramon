@@ -321,7 +321,7 @@ class Wp_Bramon {
             $filters['filter[class]'] = $_GET['capture_radiant'];
         }
 
-	    $list = '<ul class="captures_list">';
+	    $list = '<ul class="captures_list row">';
 
 	    $captures = (new Wp_Bramon_Api(get_option( 'bramon_api_key' )))->get_captures($filters, $page, $limit);
 	    $captures_list = $captures['data'];
@@ -333,14 +333,15 @@ class Wp_Bramon {
             $imagem = array_pop($imagem);
 
             $list .= '
-            <li>
-                <a href="' . str_replace('T.jpg', 'P.jpg', $imagem['url']) . '" data-lightbox="roadtrip">
-                    <img src="' . $imagem['url'] . '" alt="' . $imagem['filename'] . '">
-                </a>
-                <br>
-                ' . ($capture['class'] ?? 'Não analisado') . '<br>
-                ' . $capture['station']['name'] . ' <br> 
-                ' . (new DateTime($capture['captured_at']))->format('d/m/Y H:i:s') . '
+            <li class="col-sm-6 col-md-3 col-lg-2">
+	            <div class="bramon-captura">
+	                <a href="' . str_replace('T.jpg', 'P.jpg', $imagem['url']) . '" data-lightbox="roadtrip">
+	                    <img src="' . $imagem['url'] . '" alt="' . $imagem['filename'] . '">
+	                </a>
+	                ' . ($capture['class'] ?? '<span class="bramon-analisado">Não analisado</span>') . '<br>
+	                <span class="bramon-estacao">' . $capture['station']['name'] . '</span><br> 
+	                <span class="bramon-captured">' . (new DateTime($capture['captured_at']))->format('d/m/Y H:i:s') . '</span>
+	            </div>
             </li>
             ';
         }
@@ -353,13 +354,22 @@ class Wp_Bramon {
 	    $pagination = '
 	    <br style="clear: both">
 
-	    <div style="text-align: center">
-            ' . ($captures['current_page'] > '1' ? '<a href="' . add_query_arg('capture_page', 1, $current_url) . '">Primeira</a>' : '') . ' 
-            ' . ($captures['current_page'] > '1' ? '<a href="' . add_query_arg('capture_page', ($captures['current_page'] - 1), $current_url) . '">Anterior</a>' : '') . ' 
-            ' . ($captures['current_page'] >= '1' ? '<a href="' . add_query_arg('capture_page', ($captures['current_page'] + 1), $current_url) . '">Próxima</a>' : '') . ' 
-            ' . ($captures['current_page'] < $captures['last_page'] ? '<a href="' . add_query_arg('capture_page', ($captures['last_page']), $current_url) . '">Última</a>' : '') . ' 
-        </div>
-	    ';
+        <div class="pagination">
+            <nav class="navigation" role="navigation" aria-label="Posts">
+                <div class="nav-links" id="capturas-pag">';
+                    if ( $captures['current_page'] > 1 ) {
+                        $pagination .= '<a class="previous page-numbers" href="' . add_query_arg('capture_page', 1, $current_url) . '" data-page="1">Primeira</a>
+                        <a class="previous page-numbers" href="' . add_query_arg('capture_page', ($captures['current_page']-1), $current_url) . '" data-page="' . ($captures['current_page']-1) . '">&lt;</a>';
+                    }
+                    $pagination .= '<span aria-current="page" class="page-numbers current">' . $captures['current_page'] . '</span>';
+                    if ( $captures['current_page'] < $captures['last_page'] ) {
+                        $pagination .= '<a class="next page-numbers" href="' . add_query_arg('capture_page', ($captures['current_page']+1), $current_url) . '" data-page="' . ($captures['current_page']+1) . '">&gt;</a>';
+                        $pagination .= '<a class="next page-numbers" href="' . add_query_arg('capture_page', ($captures['last_page']), $current_url) . '" data-page="' . $captures['last_page'] . '">Última</a>';
+                    }
+        $pagination .= '
+                </div>
+            </nav>
+        </div>';
 
         return $list . '<br>' . $pagination;
     }
