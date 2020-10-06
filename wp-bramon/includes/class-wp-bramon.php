@@ -252,7 +252,7 @@ class Wp_Bramon {
 
 	    foreach ($stations as $station) {
 	        $list .= '
-            <li>
+            <li class="check-estacao">
                 <label for="station_' . $station['id'] . '">
                     <input type="checkbox" id="station_' . $station['id'] . '" name="station[]" value="' . $station['id'] . '" ' .  (array_key_exists('station', $_GET) && in_array($station['id'], $_GET['station']) ? 'checked="checked"' : '') . '> 
                     ' . $station['name'] . '

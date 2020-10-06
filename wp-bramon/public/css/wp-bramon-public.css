@@ -12,6 +12,9 @@
     padding: 0;
     text-align: center;
 }
+.station_list {
+    text-align: left;
+}
 
 .station_list li {
     list-style: none;
@@ -25,16 +28,16 @@
     display: inline-block;
     text-align: left;
 }
-.captures_list li img {
-    /*margin: 2px;*/
-    /*border: 1px solid darkgray;*/
-}
 
 .wp-block-separator {
     display: block;
     clear: both;
     margin: 0;
     padding: 0;
+}
+
+.captures_form {
+    margin-bottom: 30px;
 }
 
 .captures_form .filter_bottom {
